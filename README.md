@@ -77,7 +77,7 @@ git clone https://github.com/yourusername/human-landmark-detection.git
 cd human-landmark-detection
 python -m venv venv
 venv\Scripts\activate
-pip install opencv-python mediapipe PyQt5 numpy
+pip install -r requirements.txt
 ```
 
 ------------------------------------------------------------------------
@@ -119,6 +119,7 @@ python main.py
     │
     ├── main.py
     ├── README.md
+    ├── requirements.txt
     └── images/
         ├── hand_detection.png
         ├── face_detection.png
