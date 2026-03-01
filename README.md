@@ -1,11 +1,5 @@
 # AI-Based Human Landmark Detection and Recording System
 
-## 📌 Project Title
-
-**AI-Based Human Landmark Detection and Recording System**
-
----
-
 ## 📖 Introduction
 
 Human pose estimation is a core task in computer vision that involves detecting keypoints on the human body such as joints, facial landmarks, and hand positions.
@@ -35,23 +29,18 @@ The extracted data is stored in JSON format and can be used for:
 
 ---
 
-## 📑 Table of Contents
-
-* [Features](#-features)
-* [Technologies Used](#-technologies-used)
-* [System Architecture](#-system-architecture)
-* [Installation](#-installation-guide)
-* [How to Run](#-how-to-run)
-* [How to Use](#-how-to-use)
-* [Applications](#-applications)
-* [Example ML Use Case](#-example-machine-learning-use-case)
-* [Project Structure](#-project-structure)
-* [Future Improvements](#-future-improvements)
-* [Troubleshooting](#-troubleshooting)
-* [Dependencies](#-dependencies)
-* [License](#-license)
-
----
+🔁 System Pipeline
+Webcam Input
+     ↓
+OpenCV Frame Capture
+     ↓
+MediaPipe Holistic Processing
+     ↓
+Landmark Extraction
+     ↓
+GUI Visualization (PyQt5)
+     ↓
+JSON Data Storage
 
 ## 🚀 Features
 
@@ -89,7 +78,7 @@ Built using **PyQt5**, including:
 
 ---
 
-## 🏗 Technologies Used
+## 🏗 Tech Stack
 
 ### Programming Language
 
