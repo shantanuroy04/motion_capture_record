@@ -92,13 +92,13 @@ python main.py
 
 ## 🎮 How to Use
 
-1.  Launch the application\
-2.  Webcam opens automatically\
-3.  Select body part from dropdown\
-4.  Click Start Recording\
-5.  Perform movements\
-6.  Click Stop Recording\
-7.  Click Save Key Points\
+1.  Launch the application
+2.  Webcam opens automatically
+3.  Select body part from dropdown
+4.  Click Start Recording
+5.  Perform movements
+6.  Click Stop Recording
+7.  Click Save Key Points
 8.  Save JSON file
 
 ------------------------------------------------------------------------
