@@ -1,34 +1,26 @@
-# AI-Based Human Landmark Detection and Recording System
-
-## 📖 Introduction
+AI-Based Human Landmark Detection and Recording System
+📖 Introduction
 
 Human pose estimation is a core task in computer vision that involves detecting keypoints on the human body such as joints, facial landmarks, and hand positions.
 
-This project implements a complete **real-time keypoint detection pipeline** with a professional GUI. The system captures webcam input, processes each frame using the **MediaPipe Holistic** model, and extracts landmark coordinates for selected body parts.
+This project implements a complete real-time keypoint detection pipeline with a professional GUI. The system captures webcam input, processes each frame using MediaPipe Holistic, and extracts landmark coordinates for selected body parts.
 
 The extracted data is stored in JSON format and can be used for:
 
-* Machine Learning model training
-* Gesture recognition
-* Motion analysis
-* Human-computer interaction
-* Animation and game development
-* Biomechanics and sports analysis
+Machine Learning model training
 
----
+Gesture recognition
 
-## 🖼 System Overview
+Motion analysis
 
-![Image](https://camo.githubusercontent.com/034c02b2e6aae3873f5a4dba10fc7a200ad5b161396f25709f07109df8ff1067/68747470733a2f2f6d65646961706970652e6465762f696d616765732f6d6f62696c652f706f73655f747261636b696e675f66756c6c5f626f64795f6c616e646d61726b732e706e67)
+Human-computer interaction
 
-![Image](https://www.researchgate.net/publication/376909901/figure/fig3/AS%3A11431281414246560%401746009882739/MediaPipe-Face-Mesh-A-3D-Facial-Landmark-Detector-with-468-Landmarks.tif)
+Animation and game development
 
-![Image](https://mediapipe.dev/images/mobile/hand_landmarks.png)
+Biomechanics and sports analysis
 
-![Image](https://www.researchgate.net/publication/362871842/figure/fig1/AS%3A11431281084350163%401663153181104/MediaPipe-Hands-21-landmarks-13.ppm)
-
----
-
+🖼 System Overview
+4
 🔁 System Pipeline
 Webcam Input
      ↓
@@ -41,292 +33,268 @@ Landmark Extraction
 GUI Visualization (PyQt5)
      ↓
 JSON Data Storage
+📑 Table of Contents
 
-## 🚀 Features
+Features
 
-### ✅ Real-Time Landmark Detection
+Technologies Used
 
-* Detects **pose, face, and hand landmarks** in real time
-* Uses **MediaPipe Holistic** model for high-accuracy tracking
-* Processes video directly from webcam using OpenCV
+System Architecture
 
-### ✅ Selective Body Part Tracking
+System Pipeline
+
+Installation Guide
+
+How to Run
+
+How to Use
+
+Applications
+
+Example Machine Learning Use Case
+
+Project Structure
+
+Future Improvements
+
+Troubleshooting
+
+Dependencies
+
+License
+
+🚀 Features
+✅ Real-Time Landmark Detection
+
+Detects pose, face, and hand landmarks in real time
+
+Uses MediaPipe Holistic for high-accuracy tracking
+
+Processes video directly from webcam using OpenCV
+
+✅ Selective Body Part Tracking
 
 Users can select specific parts to track:
 
-* Whole Body
-* Face Only
-* Hands Only
-* Legs Only
+Whole Body
 
-This improves performance and allows targeted data collection.
+Face Only
 
-### ✅ Landmark Data Recording
+Hands Only
 
-* Records landmark coordinates frame-by-frame
-* Stores normalized 3D coordinates `(x, y, z)`
-* Saves data in **JSON format** for ML training
+Legs Only
 
-### ✅ Professional GUI Interface
+Improves performance and enables targeted data collection.
 
-Built using **PyQt5**, including:
+✅ Landmark Data Recording
 
-* Live video display
-* Start/Stop recording buttons
-* Save data functionality
-* Body part selection dropdown
+Records landmark coordinates frame-by-frame
 
----
+Stores normalized 3D coordinates (x, y, z)
 
-## 🏗 Tech Stack
+Saves data in JSON format for ML training
 
-### Programming Language
+✅ Professional GUI Interface
 
-* Python 3.9+
+Built using PyQt5, including:
 
-### Computer Vision
+Live video display
 
-* OpenCV
-* MediaPipe Holistic
+Start/Stop recording buttons
 
-### GUI Framework
+Save data functionality
 
-* PyQt5
+Body part selection dropdown
 
-### Data Processing
+🏗 Technologies Used
+Programming Language
 
-* NumPy
-* JSON
+Python 3.9+
 
-### Logging and Error Handling
+Computer Vision
 
-* Python `logging` module
+OpenCV
 
----
+MediaPipe Holistic
 
-## ⚙ System Architecture
+GUI Framework
 
-### Step 1: Webcam Capture
+PyQt5
 
-```python
+Data Processing
+
+NumPy
+
+JSON
+
+Logging
+
+Python logging module
+
+⚙ System Architecture
+Step 1: Webcam Capture
 self.capture = cv2.VideoCapture(0)
-```
-
-### Step 2: Frame Processing
-
-Each frame is converted to RGB and processed using MediaPipe:
-
-```python
+Step 2: Frame Processing
 results = self.holistic.process(frame_rgb)
-```
 
 MediaPipe detects:
 
-* 33 pose landmarks
-* 468 face landmarks
-* 21 landmarks per hand
+33 pose landmarks
 
----
+468 face landmarks
 
-### Step 3: Landmark Extraction
+21 landmarks per hand
 
-Coordinates are extracted and normalized:
-
-```python
+Step 3: Landmark Extraction
 normalized_landmarks.append((landmark.x, landmark.y, landmark.z))
-```
 
-These coordinates represent spatial positions of keypoints.
+Coordinates represent spatial positions of keypoints.
 
----
+Step 4: Visualization
 
-### Step 4: Visualization
+Landmarks are drawn using MediaPipe drawing utilities.
 
-Landmarks are drawn on the frame using MediaPipe drawing utilities.
-
----
-
-### Step 5: Recording and Saving
-
-Landmark data is saved as JSON:
-
-```python
+Step 5: Recording and Saving
 json.dump(self.key_points, f)
-```
 
-This allows reuse for:
+Saved data can be reused for:
 
-* Machine learning training
-* Motion analysis
-* Gesture recognition
+ML training
 
----
+Motion analysis
 
-## 💻 Installation Guide
+Gesture recognition
 
-### Step 1: Clone Repository
-
-```bash
+💻 Installation Guide
+1️⃣ Clone Repository
 git clone https://github.com/yourusername/human-landmark-detection.git
 cd human-landmark-detection
-```
-
-### Step 2: Create Virtual Environment (Recommended)
-
-```bash
+2️⃣ Create Virtual Environment (Recommended)
 python -m venv venv
-venv\Scripts\activate
-```
-
-### Step 3: Install Dependencies
-
-```bash
+venv\Scripts\activate   # Windows
+3️⃣ Install Dependencies
 pip install opencv-python mediapipe PyQt5 numpy
-```
-
----
-
-## ▶ How to Run
-
-```bash
+▶ How to Run
 python main.py
-```
+🎮 How to Use
 
----
+Launch the application
 
-## 🎮 How to Use
+Webcam opens automatically
 
-1. Launch the application
-2. Webcam will open automatically
-3. Select body part from dropdown
-4. Click **Start Recording**
-5. Perform movements
-6. Click **Stop Recording**
-7. Click **Save Key Points**
-8. Save JSON file
+Select body part from dropdown
 
----
+Click Start Recording
 
-## 📊 Applications
+Perform movements
 
-### 🤖 Machine Learning
+Click Stop Recording
 
-* Pose classification
-* Gesture recognition
-* Action detection
+Click Save Key Points
 
-### 👁 Computer Vision
+Save JSON file
 
-* Motion tracking
-* Human behavior analysis
+📊 Applications
+🤖 Machine Learning
 
-### 🎮 Game Development
+Pose classification
 
-* Character animation
-* Motion capture
+Gesture recognition
 
-### 🏥 Healthcare
+Action detection
 
-* Physiotherapy monitoring
-* Movement analysis
+👁 Computer Vision
 
----
+Motion tracking
 
-## 🧠 Example Machine Learning Use Case
+Human behavior analysis
 
-Collected keypoint data can be used to train models such as:
+🎮 Game Development
 
-* LSTM for action recognition
-* Random Forest for gesture classification
-* CNN-LSTM hybrid models
-* GRU or Transformer-based sequence models
+Character animation
 
-Example workflow:
+Motion capture
 
-1. Collect keypoint data
-2. Label dataset
-3. Split into train/test sets
-4. Train deep learning model
-5. Evaluate accuracy
-6. Deploy real-time classifier
+🏥 Healthcare
 
----
+Physiotherapy monitoring
 
-## 📁 Project Structure
+Movement analysis
 
-```
+🧠 Example Machine Learning Use Case
+
+Collected keypoint data can train:
+
+LSTM for action recognition
+
+Random Forest for gesture classification
+
+CNN-LSTM hybrid models
+
+GRU or Transformer-based sequence models
+
+Example Workflow
+
+Collect keypoint data
+
+Label dataset
+
+Split into train/test sets
+
+Train model
+
+Evaluate accuracy
+
+Deploy classifier
+
+📁 Project Structure
 project/
 │
 ├── main.py
 ├── README.md
 ├── requirements.txt
-```
+🔮 Future Improvements
 
----
+Dataset labeling tool
 
-## 🔮 Future Improvements
+Export to CSV format
 
-* Add dataset labeling tool
-* Export to CSV format
-* Add ML model training module
-* Real-time gesture classification
-* Multi-person detection
+Integrated ML training module
 
----
+Real-time gesture classification
 
-## 🛠 Troubleshooting
+Multi-person detection
 
-### Webcam Not Opening
+🛠 Troubleshooting
+Webcam Not Opening
 
-* Ensure no other application is using the camera
-* Try changing camera index:
+Ensure no other app is using the camera
 
-```python
+Try changing camera index:
+
 cv2.VideoCapture(1)
-```
-
-### MediaPipe Errors
-
-* Make sure mediapipe version is compatible:
-
-```bash
+MediaPipe Errors
 pip install mediapipe==0.10.0
-```
-
-### GUI Not Launching
-
-* Ensure PyQt5 is properly installed:
-
-```bash
+GUI Not Launching
 pip install PyQt5
-```
+📦 Dependencies
 
----
+Python 3.9+
 
-## 📦 Dependencies
+opencv-python
 
-* Python 3.9+
-* opencv-python
-* mediapipe
-* PyQt5
-* numpy
+mediapipe
 
----
+PyQt5
 
-## 👥 Contributors
+numpy
 
-* Shantanu Roy
-(shantanur003@gmail.com)
+👥 Contributors
 
-(Feel free to add contributors here.)
+Your Name
 
----
-
-## 📄 License
+📄 License
 
 This project is licensed under the MIT License.
-You may modify and distribute it freely.
 
----
-
-# ⭐ If you find this project useful, consider giving it a star on GitHub!
+⭐ If you find this project useful, consider giving it a star on GitHub!
