@@ -1,4 +1,4 @@
-# AI-Based Human Landmark Detection and Recording System
+# MoCapify – Real-Time Motion Capture
 
 ## 📖 Introduction
 
